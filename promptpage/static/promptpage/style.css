@@ -1,0 +1,95 @@
+/* style.css */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Use a custom font from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+
+/* Use a dark background for the body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+}
+
+/* Center the main heading and add some margin */
+h1 {
+    text-align: center;
+    color: white;
+    margin: 20px;
+}
+
+/* Use a flex container for the main content */
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Style the select elements and buttons */
+select, button {
+    width: 80%;
+    height: 40px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Use different colors for the select elements and buttons */
+#categories {
+    background-color: #ff6e7f;
+}
+
+#create-category {
+    background-color: #bfe9ff;
+}
+
+#subcategories {
+    background-color: #d4fc79;
+}
+
+#create-subcategory {
+    background-color: #96e6a1;
+}
+
+#prompts {
+    background-color: #ffd3b6;
+}
+
+#save-prompt, #delete-prompt {
+    background-color: #cfd9df;
+}
+
+/* Style the input and textarea elements */
+input, textarea {
+    width: 80%;
+    height: 40px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Use a larger height for the textarea elements */
+textarea {
+    height: 80px;
+}
+
+/* Style the prompt detail section */
+#prompt-detail {
+    width: 25%;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: #212121; /* Use a darker shade of gray for the prompt detail section */
+}
+
+/* Center the prompt detail heading and add some margin */
+#prompt-detail h2 {
+    text-align: center;
+    margin: 20px;
+}

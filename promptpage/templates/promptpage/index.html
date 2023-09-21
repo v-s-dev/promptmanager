@@ -1,0 +1,48 @@
+<!-- index.html -->
+<!DOCTYPE html>
+{% load static %} 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prompt Generator</title>
+    <link rel="stylesheet" href="{% static 'promptpage/style.css' %}">
+</head>
+<body>
+    <h1>Prompt Generator</h1>
+    <div id="container">
+        <div id="category-select">
+            <h2>Categories</h2>
+            <select id="categories">
+                <option value="">Select a category</option>
+            </select>
+            <!-- Add a button to create a new category -->
+            <button id="create-category">Create a new category</button>
+        </div>
+        <div id="subcategory-select">
+            <h2>Subcategories</h2>
+            <select id="subcategories">
+                <option value="">Select a subcategory</option>
+            </select>
+            <!-- Add a button to create a new subcategory -->
+            <button id="create-subcategory">Create a new subcategory</button>
+        </div>
+        <div id="prompt-select">
+            <h2>Prompts</h2>
+            <select id="prompts">
+                <option value="">Select a prompt</option>
+            </select>
+        </div>
+        <div id="prompt-detail">
+            <h2>Prompt Detail</h2>
+            <!-- Use input and textarea elements to allow editing the prompt details -->
+            <input id="prompt-name" type="text" placeholder="Enter a prompt name">
+            <textarea id="prompt-text" placeholder="Enter a prompt"></textarea>
+            <textarea id="prompt-notes" placeholder="Enter some notes"></textarea>
+            <!-- Add buttons to save or delete the prompt details -->
+            <button id="save-prompt">Save prompt</button>
+            <button id="delete-prompt">Delete prompt</button>
+        </div>
+    </div>
+    <script src="{% static 'promptpage/script.js' %}"></script>
+</body>
+</html>
