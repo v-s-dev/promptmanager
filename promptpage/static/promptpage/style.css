@@ -82,7 +82,7 @@ textarea {
 
 /* Style the prompt detail section */
 #prompt-detail {
-    width: 25%;
+    width: 75%; /* Use a larger width for the prompt detail section */
     height: 100vh;
     overflow-y: scroll;
     background-color: #212121; /* Use a darker shade of gray for the prompt detail section */
@@ -92,4 +92,27 @@ textarea {
 #prompt-detail h2 {
     text-align: center;
     margin: 20px;
+}
+
+/* Style the select elements section */
+#select-elements {
+    width: 20%; /* Use a smaller width for the select elements section */
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: #121212; /* Use the same color as the body for the select elements section */
+}
+
+/* Center the select elements headings and add some margin */
+#select-elements h2 {
+    text-align: center;
+    margin: 20px;
+}
+
+/* Make the prompt text textarea larger than the prompt notes textarea */
+#prompt-text {
+    height: 160px; /* Use a larger height for the prompt text textarea */
+}
+
+#prompt-notes {
+    height: 120px; /* Use a smaller height for the prompt notes textarea */
 }

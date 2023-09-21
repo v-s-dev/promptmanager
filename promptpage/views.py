@@ -100,8 +100,9 @@ def save_prompt(request):
 @csrf_exempt
 def delete_prompt(request):
     if request.method == 'DELETE':
-        # Get the prompt id from the query parameters
-        prompt_id = request.GET.get('id')
+        # Get the prompt id from the request body
+        body = json.loads(request.body)
+        prompt_id = body.get('id')
         if prompt_id:
             # Delete the prompt with the given id
             prompt = Prompt.objects.get(id=prompt_id)

@@ -242,36 +242,43 @@ const promptGenerator = (function () {
         }
         catch (error) { console.error(error); }
     }
+
     // Delete an existing prompt detail and remove it from the database and the select element
-    async function deletePrompt() {
-        try {
-            // Check if a prompt is selected
-            let prompt_id = promptSelect.value;
-            if (prompt_id) {
-                // Confirm with the user before deleting the prompt
-                let confirm = window.confirm('Are you sure you want to delete this prompt?');
-                if (confirm) {
-                    // Delete the prompt from the database with a delete request
-                    let response = await fetch(`/promptpage/api/prompt/${prompt_id}`, {
-                        method: 'DELETE'
-                    });
-                    let data = await response.json();
-                    // Remove the prompt from the prompts array and the select element
-                    let index = prompts.findIndex(prompt => prompt.id === data.id);
-                    prompts.splice(index, 1);
-                    let option = promptSelect.querySelector(`option[value="${data.id}"]`);
-                    option.remove();
-                    // Clear the input and textarea values
-                    clearPromptDetail();
-                    alert('Prompt deleted successfully');
-                }
-            } else {
-                alert('Please select a prompt first');
+async function deletePrompt() {
+    try {
+        // Check if a prompt is selected
+        let prompt_id = promptSelect.value;
+        if (prompt_id) {
+            // Confirm with the user before deleting the prompt
+            let confirm = window.confirm('Are you sure you want to delete this prompt?');
+            if (confirm) {
+                // Delete the prompt from the database with a delete request
+                // Pass the prompt id as a JSON object in the request body
+                let response = await fetch(`/promptpage/api/prompt`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({id: prompt_id})
+                });
+                let data = await response.json();
+                // Remove the prompt from the prompts array and the select element
+                let index = prompts.findIndex(prompt => prompt.id === data.id);
+                prompts.splice(index, 1);
+                let option = promptSelect.querySelector(`option[value="${data.id}"]`);
+                option.remove();
+                // Clear the input and textarea values
+                clearPromptDetail();
+                alert('Prompt deleted successfully');
             }
-        } catch (error) {
-            console.error(error);
+        } else {
+            alert('Please select a prompt first');
         }
+    } catch (error) {
+        console.error(error);
     }
+}
+
 
     // Initialize the module by getting the DOM elements and adding event listeners
     function init() {
