@@ -21,6 +21,11 @@ h1 {
     margin: 20px;
 }
 
+h2 {
+    color: gold;
+    margin: 20px;
+}
+
 /* Use a flex container for the main content */
 #container {
     display: flex;
