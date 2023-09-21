@@ -17,7 +17,7 @@ body {
 /* Center the main heading and add some margin */
 h1 {
     text-align: center;
-    color: white;
+    color: gold;
     margin: 20px;
 }
 
@@ -71,6 +71,7 @@ select, button {
 
 /* Style the input and textarea elements */
 input, textarea {
+    background-color: #121212;
     width: 80%;
     height: 40px;
     margin: 10px auto;
@@ -78,6 +79,7 @@ input, textarea {
     border-radius: 20px;
     padding: 10px;
     font-size: 16px;
+    color: gold
 }
 
 /* Use a larger height for the textarea elements */
